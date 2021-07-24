@@ -2,6 +2,7 @@ import {StatusBar} from 'expo-status-bar'
 import React from 'react'
 import {StyleSheet, Text, View, TouchableOpacity, Alert, ImageBackground, Image} from 'react-native'
 import {Camera} from 'expo-camera'
+import CustomCarousel from './Carousel'
 let camera: Camera | null
 export default function App() {
   const [startCamera, setStartCamera] = React.useState(false)
@@ -165,9 +166,12 @@ export default function App() {
             alignItems: 'center'
           }}
         >
+          <CustomCarousel />
           <TouchableOpacity
             onPress={__startCamera}
             style={{
+              position: "absolute",
+              bottom: 500,
               width: 130,
               borderRadius: 4,
               backgroundColor: '#14274e',
